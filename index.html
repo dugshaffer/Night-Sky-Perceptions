@@ -68,7 +68,8 @@
                 }
                 
                 // Draw plane if still on screen
-                if (px < c.width && py > 0 && planeZ > 0) {
+                if (px < c.width && py > 0 && planeZ > 0) {  js let miniSize = 150; let miniX = c.width - miniSize - 20; let miniY = c.height - miniSize - 20; ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(miniX, miniY, miniSize, miniSize); ctx.strokeStyle = 'white'; ctx.lineWidth = 1; ctx.strokeRect(miniX, miniY, miniSize, miniSize); ctx.fillStyle = 'white'; ctx.font = '12px Arial'; ctx.fillText('N', miniX + miniSize/2 -5, miniY + 15); ctx.fillText('S', miniX + miniSize/2 -5, miniY + miniSize -5); ctx.fillText('W', miniX + 5, miniY + miniSize/2 +5); ctx.fillText('E', miniX + miniSize -15, miniY + miniSize/2 +5); ctx.beginPath(); ctx.moveTo(miniX + miniSize/2, miniY); ctx.lineTo(miniX + miniSize/2, miniY + miniSize); ctx.moveTo(miniX, miniY + miniSize/2); ctx.lineTo(miniX + miniSize, miniY + miniSize/2); ctx.stroke(); if (planeActive && planeZ > 0) { let mapX = miniSize/2 + (px - c.width/2) / 10; let mapY = miniSize/2 - (py - c.height/2) / 10 + (100 - planeZ)/2; ctx.fillStyle = 'red'; ctx.fillRect(miniX + mapX -2, miniY + mapY -2, 4, 4); } 
+
                     ctx.fillStyle = 'red';
                     ctx.fillRect(px - planeSize / 2, py - planeSize / 2, planeSize, planeSize); // Centered, growing square
                 } else {
