@@ -109,7 +109,7 @@
             if (planeActive && planeZ > 0) {
                 // Map plane position: X (east-west), Y (north-south inverted), Z scales distance
                 let miniPx = miniSize / 2 + (px - c.width / 2) / 10; // Scaled horizontal (right = east)
-                let miniPy = miniSize / 2 - (py - c.height / 2) / 10 + (100 - planeZ) / 2; // Scaled vertical (up = north), approach moves it north
+                let miniPy = miniSize / 2 - (py - c.height / 2) / 10 + planeZ / 10; // Scaled vertical (up = north), approach moves it north
                 ctx.fillStyle = 'red';
                 ctx.fillRect(miniX + miniPx - 2, miniY + miniPy - 2, 4, 4); // Small red dot in mini-map
             }
